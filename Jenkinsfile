@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean Workspace') {
+        stage('Checkout Code') {
             steps {
+                // вручную выполнить checkout, если ты используешь deleteDir()
                 deleteDir()
+                checkout scm
             }
         }
 
